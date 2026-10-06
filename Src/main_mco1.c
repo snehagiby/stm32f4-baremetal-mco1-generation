@@ -10,6 +10,12 @@ void mco1_m4(void){
 
     RCC->PLLCFGR &= ~(1<<22); //making sure only PLLSRC is HSI.
     //keeping default value for M=16,R=2,Q=4,P=2 and changing N= 8.
+    //making M= 16 Satisfy the condition that the vco input frequency should be between 1MHz to 2MHz. Recommended selct frequency of2Mhaz to stop jitter.
+    //making N = C8 means 200 so the 1MHz *200 = 200mhz as the vco output.satisfying the condition The software has to set these bits correctly to ensure that the VCO output
+   // frequency is between 100 and 432MHz.
+    //P =2 making pllclk = 100MHz.satisfying the condition  The software has to set these bits correctly not to exceed 180MHz on this domain.
+   // PLL output clock frequency = VCO frequency / PLLP with PLLP = 2, 4, 6, or 8
+
     RCC->PLLCFGR &= ~(0x1FF<<6);
     RCC->PLLCFGR |= (0x0C8 << 6);
 
