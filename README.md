@@ -44,4 +44,4 @@ void mco1_m4(void);
 - PLLM[5:0]: The software has to set these bits correctly to ensure that the VCO input frequency ranges from 1 to 2MHz. It is recommended to select a frequency of 2MHz to limit PLL jitter.
 
   **Result**
-  ![MCO1 Waveform Output]([images/waveform.png](https://github.com/snehagiby/stm32f4-baremetal-mco1-generation/blob/main/mco1_output.jpg))
+  ![MCO1 Waveform Output](mco1_output.jpg)
